@@ -21,10 +21,12 @@ class App extends React.Component {
   //async componentDidMount calls the api and calls employeelist and filtered list for data sets
   async componentDidMount() {
     let response = await axios({
+      //get method for calling the randomuser api
       method: 'get',
       url: 'https://randomuser.me/api/?results=50',
       responseType: 'stream'
     })
+    //setloading state to false and then sets employee and filtered to data.results
     data = response.data.results;
     this.setState({
       loading: false,
@@ -64,6 +66,8 @@ class App extends React.Component {
         this.sortDecending(this.state.filteredList)
         this.setState({ ascending: true })
       }
+      
+      //I want to do a sort on these as well but was not sure h
     } else if (header === 'Age') {
 
     } else if (header === "State") {
@@ -119,6 +123,8 @@ class App extends React.Component {
 
     //what is displayed on load the components will rely on this to make searches and filter data (if im doing this right)
     return (
+      //gonna call in header component at 127
+      //and Im gonna call the table component in at 134 if I can call the tablerow component in the table component
       <div className="App">
         <Header />
         <Search searchFunction={this.search} />
