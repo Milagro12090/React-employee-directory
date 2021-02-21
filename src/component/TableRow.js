@@ -1,7 +1,8 @@
 //import react
 import React from "react";
-
+//this is called in the table component
 function TableRow(props) {
+    //function to call each of the data types and put an employee in each row
     return (
         <tr>
             <td>
@@ -17,5 +18,5 @@ function TableRow(props) {
         </tr>
     )
 }
-
+//export table row
 export default TableRow;
